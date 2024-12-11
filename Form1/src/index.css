@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --Background-color : #fff;
+     /* Cor  Para o background do formulário */
+    --text-color-Form : #000;
+    /* Cor  padrão para o texto do formulário */
+    --text-color: #fff;
+  /* Cor  padrão para o texto do botão */
+  --Button-Color: #16A34A;
+  /* Cor botões */
+  }
