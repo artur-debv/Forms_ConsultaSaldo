@@ -1,5 +1,7 @@
 import React from 'react';
 import logoJcsx from '../assets/logoJcsx.png';
+import { InputField } from './InputField';
+import { Button } from './Button';
 
 export function LoginForm() {
   return (
@@ -48,12 +50,7 @@ export function LoginForm() {
                 Email
               </label>
               <div>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  className="appearance-none mb-4 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm "
-                />
+                <InputField id="email" type="email"/>
               </div>
             </div>
             <div>
@@ -65,27 +62,10 @@ export function LoginForm() {
                 Password
               </label>
               <div>
-                <input
-                  id="password"
-                  type="password"
-                  required
-                  className="appearance-none mb-4 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500  focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm "
-                  style={{
-                    color: 'var(--text-color)'
-                  }}
-                />
+                <InputField id="password" type="password" />
               </div>
             </div>
-            <button
-              type="submit"
-              className="w-full py-2 rounded-lg mt-4 text-sm font-normal"
-              style={{
-                backgroundColor: 'var(--primary-color)',
-                color: 'var(--secondary-color)',
-              }}
-            >
-              Login
-            </button>
+           <Button type="submit">Login</Button>
           </form>
         </div>
       </div>
