@@ -13,8 +13,7 @@ export function LoginForm() {
     >
       {/* Header fixo no topo para telas maiores */}
       <Header />
-
-      {/* Formulário de login */}
+      
       <div className="max-w-[360px] overflow-hidden rounded-[20px] bg-white shadow-lg w-72 mt-6">
         {/* Header para telas menores (será escondido em telas maiores) */}
         <div
