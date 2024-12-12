@@ -2,6 +2,7 @@ import React from 'react';
 import logoJcsx from '../assets/logoJcsx.png';
 import { InputField } from './InputField';
 import { Button } from './Button';
+import { Label } from './Label';
 
 export function LoginForm() {
   return (
@@ -42,30 +43,26 @@ export function LoginForm() {
           </h1>
           <form className="space-y-4">
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm mb-1"
+              <Label
+                htmlFor="Email"
+                text="Email"
                 style={{ color: 'var(--text-color)' }}
-              >
-                Email
-              </label>
+              />
               <div>
-                <InputField id="email" type="email"/>
+                <InputField id="email" type="email" />
               </div>
             </div>
             <div>
-              <label
+              <Label
                 htmlFor="password"
-                className="block text-sm mb-1"
+                text="Password"
                 style={{ color: 'var(--text-color)' }}
-              >
-                Password
-              </label>
+              />
               <div>
                 <InputField id="password" type="password" />
               </div>
             </div>
-           <Button type="submit">Login</Button>
+            <Button type="submit">Login</Button>
           </form>
         </div>
       </div>
