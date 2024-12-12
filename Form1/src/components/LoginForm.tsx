@@ -39,7 +39,7 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        <Button type="submit">Entrar</Button>
+                        <Button type="submit">Login</Button>
                     </div>
                 </form>
                 <div className="mt-6 grid grid-cols-1 justify-items-center items-center ">
