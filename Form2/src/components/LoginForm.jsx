@@ -3,16 +3,22 @@ import logoJcsx from '../assets/logoJcsx.png';
 import { InputField } from './InputField';
 import { Button } from './Button';
 import { Label } from './Label';
+import { Header } from './Header';
 
 export function LoginForm() {
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-4"
+      className="min-h-screen flex flex-col items-center justify-center p-4 pt-24 md:pt-16" // Ajuste do padding-top para telas maiores e menores
       style={{ backgroundColor: 'var(--background-color)' }}
     >
-      <div className="max-w-[360px] overflow-hidden rounded-[20px] bg-white shadow-lg w-72">
+      {/* Header fixo no topo para telas maiores */}
+      <Header />
+
+      {/* Formulário de login */}
+      <div className="max-w-[360px] overflow-hidden rounded-[20px] bg-white shadow-lg w-72 mt-6">
+        {/* Header para telas menores (será escondido em telas maiores) */}
         <div
-          className="relative h-48 w-72"
+          className="relative h-48 w-72 md:hidden"
           style={{ backgroundColor: 'var(--primary-color)' }}
         >
           <div className="absolute inset-0 opacity-10">
