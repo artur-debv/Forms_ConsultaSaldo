@@ -3,8 +3,19 @@ import Button from './Button';
 import logoJcsx from '../assets/logoJcsx.svg';
 //import SocialButton from './SocialButton';
 //import { FaGoogle } from "react-icons/fa";
+import { useForm } from 'react-hook-form'
+import { useState } from 'react';
 
 const LoginForm = () => {
+
+    const [OutPut, setOutPut] = useState('')
+
+    const { register, handleSubmit } = useForm()
+
+    function CreateUser(data: any) {
+        setOutPut(JSON.stringify(data, null , 2))
+    }
+
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div
@@ -26,10 +37,10 @@ const LoginForm = () => {
 
                     <p className="text-gray-600"></p>
                 </div>
-                <form className="mt-8 space-y-6">
+                <form onSubmit={handleSubmit(CreateUser)} className="mt-8 space-y-6">
                     <div className="rounded-md shadow-sm -space-y-px">
-                        <InputField id="email" type="email" placeholder="Email" />
-                        <InputField id="password" type="password" placeholder="Senha" />
+                        <InputField type="email" placeholder="Email" {...register('email')} />
+                        <InputField type="password" placeholder="Senha"  {...register('password')} />
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="text-sm">
@@ -50,6 +61,9 @@ const LoginForm = () => {
                         </SocialButton>*/}
                 </div>
             </div>
+
+            <pre>{OutPut}</pre>
+
         </div>
     );
 };
