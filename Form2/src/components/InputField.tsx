@@ -1,3 +1,5 @@
+import React from "react";
+
 export function InputField({ id, type, placeholder }) {
     return (
         <div>

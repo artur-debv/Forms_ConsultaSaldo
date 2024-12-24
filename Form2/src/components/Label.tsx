@@ -1,3 +1,5 @@
+import React from "react";
+
 export function Label({ htmlFor, text, style }) {
     return (
         <label
