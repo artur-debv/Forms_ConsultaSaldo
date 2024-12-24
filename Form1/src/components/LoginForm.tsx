@@ -1,8 +1,6 @@
 import InputField from './InputField';
 import Button from './Button';
 import logoJcsx from '../assets/logoJcsx.svg';
-//import SocialButton from './SocialButton';
-//import { FaGoogle } from "react-icons/fa";
 import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -63,24 +61,10 @@ const LoginForm = () => {
                         <InputField type="password" placeholder="Senha"  {...register('password')} />
                         {errors.password && <span>{errors.password.message}</span>}
                     </div>
-                    <div className="flex items-center justify-between">
-                        <div className="text-sm">
-                            {/* <a href="#" className="font-medium text-green-600 hover:text-green-500">
-                            Esqueceu sua senha?
-                            </a> */}
-                        </div>
-                    </div>
                     <div className="space-y-4">
                         <Button type="submit">Login</Button>
                     </div>
                 </form>
-                <div className="mt-6 grid grid-cols-1 justify-items-center items-center ">
-                    { /*<SocialButton href="#">
-                            <span className="sr-only">Continue with Google</span>
-                            <FaGoogle />
-                            Google
-                        </SocialButton>*/}
-                </div>
             </div>
 
             <pre>{OutPut}</pre>
