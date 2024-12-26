@@ -1,4 +1,10 @@
-export function Button({ type, children }) {
+
+interface ButtonProps {
+    type: 'submit' | 'button' | 'reset';
+    children: React.ReactNode;
+}
+
+export function Button({ type, children }: ButtonProps) {
     return (
         <button
             type={type}
