@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 
+
 const CreateUserFormSchema = z.object({
   email: z.string()
     .nonempty("Email é obrigatório")
@@ -42,7 +43,6 @@ export function LoginForm() {
     >
       {/* Header fixo no topo para telas maiores */}
       <Header />
-
       <div className="max-w-[360px] overflow-hidden rounded-[20px] bg-white shadow-lg w-72 mt-6">
         {/* Header para telas menores (será escondido em telas maiores) */}
         <div
