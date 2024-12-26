@@ -4,8 +4,32 @@ import { InputField } from './InputField';
 import { Button } from './Button';
 import { Label } from './Label';
 import { Header } from './Header';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const CreateUserFormSchema = z.object({
+  email: z.string()
+    .nonempty("Email é obrigatório")
+    .email('O Formato do e-mail inválido'),
+  password: z.string()
+    .min(6, 'a senha precisa ter no minimo 6 caracteres ')
+});
+
+type CreateUseFormdata = z.infer<typeof CreateUserFormSchema>;
+
 
 export function LoginForm() {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors } }
+    = useForm <CreateUserFormdata> ({
+      resolver: zodResolver(CreateUserFormSchema),
+    })
+
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center p-4 pt-24 md:pt-16" // Ajuste do padding-top para telas maiores e menores
@@ -13,7 +37,7 @@ export function LoginForm() {
     >
       {/* Header fixo no topo para telas maiores */}
       <Header />
-      
+
       <div className="max-w-[360px] overflow-hidden rounded-[20px] bg-white shadow-lg w-72 mt-6">
         {/* Header para telas menores (será escondido em telas maiores) */}
         <div
@@ -46,7 +70,7 @@ export function LoginForm() {
           >
             Login
           </h1>
-          <form className="space-y-4">
+          <form cassName="space-y-4">
             <div>
               <Label
                 htmlFor="Email"
@@ -54,7 +78,7 @@ export function LoginForm() {
                 style={{ color: 'var(--text-color)' }}
               />
               <div>
-                <InputField id="email" type="email" />
+                <InputField id="email" type="email" {...register('email')} />
               </div>
             </div>
             <div>
@@ -64,7 +88,7 @@ export function LoginForm() {
                 style={{ color: 'var(--text-color)' }}
               />
               <div>
-                <InputField id="password" type="password" />
+                <InputField id="password" type="password" {...register('password')} />
               </div>
             </div>
             <Button type="submit">Login</Button>
