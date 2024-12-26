@@ -1,4 +1,3 @@
-import React from 'react';
 import logoJcsx from '../assets/logoJcsx.png';
 import { InputField } from './InputField';
 import { Button } from './Button';

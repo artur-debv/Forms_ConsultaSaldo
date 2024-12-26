@@ -1,4 +1,3 @@
-import React from 'react';
 import logoJcsx from '../assets/logoJcsx.svg';
 
 export const Header = () => {

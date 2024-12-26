@@ -1,6 +1,11 @@
-import React from "react";
 
-export function Label({ htmlFor, text, style }) {
+interface LabelProps {
+    htmlFor: string; 
+    text: string;   
+    style?: React.CSSProperties; 
+}
+
+export function Label({ htmlFor, text, style }: LabelProps) {
     return (
         <label
             htmlFor={htmlFor}
