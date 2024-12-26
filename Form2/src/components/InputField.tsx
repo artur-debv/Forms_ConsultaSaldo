@@ -13,7 +13,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             placeholder={placeholder}
             ref={ref}
             {...rest}
-            className="appearance-none mb-4 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+            className="appearance-none mb-4 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none sm:text-sm"
         />
     )
 );
