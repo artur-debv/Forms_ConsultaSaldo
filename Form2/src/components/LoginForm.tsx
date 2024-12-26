@@ -6,6 +6,7 @@ import { Header } from './Header';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
 
 const CreateUserFormSchema = z.object({
   email: z.string()
@@ -20,6 +21,8 @@ type CreateUseFormdata = z.infer<typeof CreateUserFormSchema>;
 
 export function LoginForm() {
 
+  const [OutPut, setOutPut] = useState('')
+
   const {
     register,
     handleSubmit,
@@ -28,6 +31,9 @@ export function LoginForm() {
       resolver: zodResolver(CreateUserFormSchema),
     })
 
+  function CreateUser(data: any) {
+    setOutPut(JSON.stringify(data, null, 2))
+  }
 
   return (
     <div
@@ -69,7 +75,7 @@ export function LoginForm() {
           >
             Login
           </h1>
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit(CreateUser)} className="space-y-4">
             <div>
               <Label
                 htmlFor="Email"
@@ -78,6 +84,7 @@ export function LoginForm() {
               />
               <div>
                 <InputField placeholder="email" id="email" type="email" {...register('email')} />
+                {errors.email && <span>{errors.email.message}</span>}
               </div>
             </div>
             <div>
@@ -88,12 +95,14 @@ export function LoginForm() {
               />
               <div>
                 <InputField placeholder="password" id="password" type="password" {...register('password')} />
+                {errors.password && <span>{errors.password.message}</span>}
               </div>
             </div>
             <Button type="submit">Login</Button>
           </form>
         </div>
       </div>
+      <pre>{OutPut}</pre>
     </div>
   );
 }
