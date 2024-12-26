@@ -1,4 +1,4 @@
-import InputField from './InputField';
+import { InputField } from './InputField';
 import Button from './Button';
 import logoJcsx from '../assets/logoJcsx.svg';
 import { useState } from 'react';

@@ -25,7 +25,7 @@ export function LoginForm() {
     register,
     handleSubmit,
     formState: { errors } }
-    = useForm <CreateUserFormdata> ({
+    = useForm<CreateUseFormdata>({
       resolver: zodResolver(CreateUserFormSchema),
     })
 
@@ -70,7 +70,7 @@ export function LoginForm() {
           >
             Login
           </h1>
-          <form cassName="space-y-4">
+          <form className="space-y-4">
             <div>
               <Label
                 htmlFor="Email"
@@ -78,7 +78,7 @@ export function LoginForm() {
                 style={{ color: 'var(--text-color)' }}
               />
               <div>
-                <InputField id="email" type="email" {...register('email')} />
+                <InputField placeholder="email" id="email" type="email" {...register('email')} />
               </div>
             </div>
             <div>
@@ -88,7 +88,7 @@ export function LoginForm() {
                 style={{ color: 'var(--text-color)' }}
               />
               <div>
-                <InputField id="password" type="password" {...register('password')} />
+                <InputField placeholder="password" id="password" type="password" {...register('password')} />
               </div>
             </div>
             <Button type="submit">Login</Button>

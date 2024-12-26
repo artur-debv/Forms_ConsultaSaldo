@@ -1,12 +1,12 @@
 import { forwardRef } from 'react';
 
-// Define os tipos das propriedades do InputField
+
 type InputFieldProps = {
   type: string;
   placeholder: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({ type, placeholder, ...rest }, ref) => (
+export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({ type, placeholder, ...rest }, ref) => (
   <input
     type={type}
     placeholder={placeholder}
@@ -16,4 +16,4 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({ type, placeh
   />
 ));
 
-export default InputField;
+
