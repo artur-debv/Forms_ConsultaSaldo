@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { ErrorMessage } from './ErrorsMessage/ErrorsMessage'
 
 const CreateUserFormSchema = z.object({
     email: z.string()
@@ -56,19 +57,25 @@ const LoginForm = () => {
                 </div>
                 <form onSubmit={handleSubmit(CreateUser)} className="mt-8 space-y-6">
                     <div className="rounded-md shadow-sm -space-y-px">
-                        <InputField type="email" placeholder="Email" {...register('email')} />
-                        {errors.email && <span>{errors.email.message}</span>}
-                        <InputField type="password" placeholder="Senha"  {...register('password')} />
-                        {errors.password && <span>{errors.password.message}</span>}
+                        <InputField
+                            type="email"
+                            placeholder="Email"
+                            {...register('email')}
+                        />
+                        <ErrorMessage errors={errors} name="email" />
+                        <InputField
+                            type="password"
+                            placeholder="Senha"
+                            {...register('password')}
+                        />
+                        <ErrorMessage errors={errors} name="password" />
                     </div>
                     <div className="space-y-4">
                         <Button type="submit">Login</Button>
                     </div>
                 </form>
             </div>
-
             <pre>{OutPut}</pre>
-
         </div>
     );
 };
