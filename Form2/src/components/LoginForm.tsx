@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
-
+import { ErrorMessage } from './ErrorMessage/ErrorsMessage'
 
 const CreateUserFormSchema = z.object({
   email: z.string()
@@ -84,7 +84,7 @@ export function LoginForm() {
               />
               <div>
                 <InputField placeholder="email" id="email" type="email" {...register('email')} />
-                {errors.email && <span>{errors.email.message}</span>}
+                <ErrorMessage errors={errors} name="email" />
               </div>
             </div>
             <div>
@@ -95,7 +95,7 @@ export function LoginForm() {
               />
               <div>
                 <InputField placeholder="password" id="password" type="password" {...register('password')} />
-                {errors.password && <span>{errors.password.message}</span>}
+                <ErrorMessage errors={errors} name="password" />
               </div>
             </div>
             <Button type="submit">Login</Button>
