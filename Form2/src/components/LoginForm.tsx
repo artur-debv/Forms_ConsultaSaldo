@@ -14,7 +14,7 @@ const CreateUserFormSchema = z.object({
     .nonempty("Email é obrigatório")
     .email('O Formato do e-mail inválido'),
   password: z.string()
-    .min(6, 'a senha precisa ter no minimo 6 caracteres ')
+    .min(6, 'a senha precisa ter 6 caracteres')
 });
 
 type CreateUseFormdata = z.infer<typeof CreateUserFormSchema>;
@@ -68,7 +68,7 @@ export function LoginForm() {
             }}
           />
         </div>
-        <div className="px-8 pb-8 pt-4 h-96">
+        <div className="px-8 pb-8 pt-4">
           <h1
             className="mb-6 text-xl font-semibold"
             style={{ color: 'var(--text-color)' }}
