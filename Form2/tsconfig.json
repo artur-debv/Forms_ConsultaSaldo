@@ -9,6 +9,11 @@
     }
   ],
   "compilerOptions": {
-    "isolatedModules": false,
+    "types": [
+      "jest"
+    ],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
